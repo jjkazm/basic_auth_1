@@ -1,6 +1,6 @@
 <% if @user.errors.any? %>
   <div>
-    <h2>Form is invalid <%= pluralize( @user.errors.count), "error" %></h2>
+    <h2>Form is invalid <%= pluralize( @user.errors.count, "error") %></h2>
     <ul>
       <% @user.errors.full_messages.each do |message| %>
         <li><%= message %></li>
