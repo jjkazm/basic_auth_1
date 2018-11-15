@@ -1,5 +1,5 @@
 <% if @user.errors.any? %>
-  <div>
+  <div class = "error_display">
     <h2>Form is invalid <%= pluralize( @user.errors.count, "error") %></h2>
     <ul>
       <% @user.errors.full_messages.each do |message| %>
