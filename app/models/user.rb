@@ -1,7 +1,9 @@
 class User < ApplicationRecord
   attr_accessor :password, :password_confirmation
   before_save :hash_password
-  validates :password, confirmation: {case_sensitive: false}
+  validates :password, confirmation: {case_sensitive: true}
+  validates :email, presence: true, uniqueness: {case_sensitive: false}
+
 
   def hash_password
     if password.present?
