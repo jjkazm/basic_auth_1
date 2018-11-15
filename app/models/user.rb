@@ -9,5 +9,14 @@ class User < ApplicationRecord
     end
   end
 
+  def self.check(email, password)
+    user = User.find_by(email: email)
+    if user && BCrypt::Password.new(user.password_hash) == password
+      user
+    else
+      nil
+    end
+  end
+
 
 end
